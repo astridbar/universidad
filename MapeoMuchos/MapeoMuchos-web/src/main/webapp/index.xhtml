@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+  <h:body>
+        <h:form id="muchos">
+            <p:growl id="growl" showDetail="true"/>
+            <p:panel>
+                <h:panelGrid columns="2"  cellpadding="5" styleClass="ui-grid"> 
+                    <h:outputLabel for="Universidad" value="Universidad:" />
+                    <p:inputText value="#{block.universidad.nombre}" id="Universidad" required="true" />
+                    <h:outputLabel for="Extencion" value="Extencion:" />
+                    <p:inputText value="#{block.universidad.extension}" id="Extencion" required="true" />
+                    <h:outputLabel for="Escudo" value="Escudo:" />
+                    <p:inputText value="#{block.universidad.escudo}" id="Escudo" required="true" />
+                </h:panelGrid>
+                
+                <h:panelGrid columns="2"  cellpadding="5" styleClass="ui-grid"> 
+                    <h:outputLabel for="Diplomado" value="Diplomado:" />
+                    <p:inputText value="#{block.diplomados.nombre}" id="Diplomado" required="true" />
+                    <h:outputLabel for="Duracion" value="Duracion:" />
+                    <p:inputText value="#{block.diplomados.duracion}" id="Duracion" required="true" />
+                </h:panelGrid>
+                
+                <h:panelGrid columns="2"  cellpadding="5" styleClass="ui-grid"> 
+                    <h:outputLabel for="Estudiante" value="Estudiante:" />
+                    <p:inputText value="#{block.estudiantes.nombre}" id="Estudiante" required="true" />
+                    <h:outputLabel for="Cedula" value="Cedula:" />
+                    <p:inputText value="#{block.estudiantes.cedula}" id="Cedula" required="true" />
+                  </h:panelGrid>
+                <p:separator/>
+                <p:commandButton value="agregar diplo" update=":login" action="#{block.crearDiplomados()}"/>
+                <p:commandButton value="#agregar univ" update=":login" action="#{block.crearUniversidad()}"/>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
